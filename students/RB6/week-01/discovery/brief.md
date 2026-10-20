@@ -23,7 +23,7 @@ TypeScrpt, Fastify API, PostgreSQL, React
 
 
 
-
+```mermaid
 graph LR
     User[User]
     ReactInterface["React \nInterface"]
@@ -37,3 +37,4 @@ MerchantAPI-- Validate and add payment to DB -->PostgreSQL
 Simulator--sends payment notify -->MerchantAPI
 PostgreSQL-- Return Payments -->ReactInterface
 PostgreSQL-- Merchant ID -->Simulator
+```
