@@ -16,7 +16,7 @@ The owner/admin grants students Write access for task branches in the official r
 
 The week files are the student-facing instructions. The root curriculum.json records their task metadata for automated checks; it is not another student syllabus. Update both when changing a task. Preserve published task IDs and keep student pointers and contribution logs aligned.
 
-Run npm.cmd run check for every change and npm.cmd run test:db for database-related work. The GitHub workflow exercises Windows/Linux starter checks and PostgreSQL tests; inspect the hosted run after publishing. Branch rules and access permissions are configured by the repository owner.
+Run npm run check for every change and npm run test:db for database-related work. The GitHub workflow exercises Windows/Linux starter checks and PostgreSQL tests; inspect the hosted run after publishing. Branch rules and access permissions are configured by the repository owner.
 
 ## Curriculum references
 
@@ -26,4 +26,4 @@ The learning model draws on [Data Sprint's blueprint](https://github.com/Startwi
 
 The curriculum assumes 15-20 hours weekly including the common two-hour problem-solving block. Preserve the common core and rotating shared responsibilities; give beginner setup/concept feedback without skipping hard proofs. No Next.js, paid service or public hosting is required in Sprint 1.
 
-Week 14 and Week 20 include witnessed no-AI repair/explain-back. Keep assessment grades outside the public repo. Week 19 extensions need bounded scope and cannot replace core tasks or force fifteen extra shared features. Complete the final demo, independent start and authored case-study evidence before recording completion.
+Week 14 and Week 20 include witnessed no-AI repair/explain-back. Keep assessment grades outside the public repo. Week 19 extensions need bounded scope and cannot replace core tasks or force twenty extra shared features. Complete the final demo, independent start and authored case-study evidence before recording completion.

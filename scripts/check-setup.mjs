@@ -8,10 +8,12 @@ if (major !== 22 || minor < 17)
 if (!existsSync('curriculum.json'))
   failures.push('Run this command from the repository root.');
 if (!existsSync('package-lock.json') || !existsSync('node_modules/typescript'))
-  failures.push('Run npm.cmd ci from the root.');
+  failures.push('Run npm ci from the root.');
 const git = spawnSync('git', ['--version'], { encoding: 'utf8' });
 if (git.status !== 0)
-  failures.push('Install Git for Windows and restart PowerShell.');
+  failures.push(
+    'Install Git (see docs/02-setup-guide-mac-windows.md) and restart your terminal.',
+  );
 if (failures.length) {
   for (const failure of failures) console.error(failure);
   process.exitCode = 1;

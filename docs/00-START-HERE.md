@@ -4,9 +4,9 @@ The cohort builds MerchantDesk, an application that records synthetic payment ev
 
 ## Your first session
 
-1. Install Git, an editor and Node using sections 1-2 of [Windows setup](02-windows-setup.md).
-2. Follow **Set up GitHub** in the [student guide](03-student-guide.md) to accept your collaborator invitation and clone the official repository. Run `npm.cmd ci` inside that cloned folder.
-3. Return to Windows setup for `setup:check`, `check` and the section 3 shell checks, then read the student guide's weekly workflow.
+1. Follow Step 1 to Step 3 of the [setup guide for Mac and Windows](02-setup-guide-mac-windows.md) once, in order. They install Git, VS Code and Node, clone the official repository, run `npm ci`, `setup:check` and `check`.
+2. Accept your collaborator invitation as described in **Set up GitHub** in the [student guide](03-student-guide.md). Then read the student guide's weekly workflow.
+3. Create your own project repository with the [own project repository guide](19-own-project-repo.md) Step 1 to Step 3.
 4. Find your RB number in [students/](../students/README.md).
 5. Open `week-01/problem_statement.md` in your folder and follow its task link.
 
@@ -35,3 +35,9 @@ Next: [Week 1](../weeks/week-01.md).
 ## The same core, individual evidence
 
 Use the same MerchantDesk contract and tools throughout. Week 19 adds one [bounded extension](15-individual-extension.md) after the core is working; it does not replace common skills or force a new technology. Week 20 includes a short demo, oral explanation and no-AI repair. The [problem-solving guide](14-problem-solving.md) explains the common weekly block.
+
+Team work, branches and pull requests: see [team repo, shared work and delivery](16-team-repo-and-delivery.md). Where to read and watch each week: see the [learning map](07-resources.md).
+
+## Where your work lives
+
+You use two repositories. The cohort clone holds your weekly proof in `students/<your id>/`. You open a pull request there and a maintainer merges it. Your own project repository in your GitHub account holds the MerchantDesk you build from scratch. Read the [VS Code workflow](18-vscode-workflow.md) and the [own project repository guide](19-own-project-repo.md). Use the [repository map](17-repo-map.md) when you are lost in the folders.

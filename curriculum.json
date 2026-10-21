@@ -7,7 +7,7 @@
       "title": "Meet the merchant and make the first change",
       "phase": "Understand",
       "need": "The client needs one place to inspect sandbox payment events, but the request is not yet a specification.",
-      "before": "No programming experience is assumed. Follow docs/02-windows-setup.md sections 1-3; do not install PostgreSQL or study React yet.",
+      "before": "No programming experience is assumed. Follow docs/02-setup-guide-mac-windows.md Step 1 to Step 3; do not install PostgreSQL or study React yet.",
       "milestone": "Agreed client brief",
       "outcome": "A reviewed brief, a safe event summary, and one authored pull request.",
       "shared": "shared/delivery/brief.md and shared/delivery/context.md",
@@ -31,7 +31,7 @@
           "learn": "Values, variables, objects, console output and the TS/JS relationship",
           "resources": ["ts", "js"],
           "instructions": "After npm ci, use the fixture at fixtures/events.json. Begin with one object and print its event ID, kind and amount_minor. Add a function that returns that summary. Record the run command in NOTES.md next to the script. Do not print credentials or customer data.",
-          "proof": "npm.cmd run practice -- students/RB1/week-01/typescript/inspector.ts runs after replacing RB1. Explain that tsx runs the code without typechecking; npm.cmd run typecheck is the separate compiler check.",
+          "proof": "npm run practice -- students/RB1/week-01/typescript/inspector.ts runs after replacing RB1. Explain that tsx runs the code without typechecking; npm run typecheck is the separate compiler check.",
           "trap": "You do not need arrays, async, React or a database to finish this first program."
         },
         {
@@ -188,7 +188,7 @@
       "title": "Represent events and ask the first SQL questions",
       "phase": "Understand",
       "need": "The merchant needs event counts, while fields such as amounts and event kinds need an agreed meaning.",
-      "before": "Bring Week 1's inspector. Install PostgreSQL using setup sections 4-5 and load fixtures/practice.sql into your personal practice database. The fixture is supplied now, not promised by a later week.",
+      "before": "Bring Week 1's inspector. Install PostgreSQL using setup guide Step 4 and Step 5 and load fixtures/practice.sql into your personal practice database. The fixture is supplied now, not promised by a later week.",
       "outcome": "Typed event data, real SQL answers and an explicit input contract.",
       "shared": "shared/delivery/event-contract.md and shared/database/practice-notes.md",
       "tasks": [
@@ -200,7 +200,7 @@
           "learn": "Primitive types, arrays, object types, branches and iteration",
           "resources": ["types", "js"],
           "instructions": "Define an event type using the actual fixture fields. Iterate over several events, select captured payments and count them. Compare a loop with filter. Explain one case where a missing value differs from zero.",
-          "proof": "The captured count matches the fixture. npm.cmd run typecheck rejects an intentionally wrong assignment; restore valid code and rerun successfully before committing.",
+          "proof": "The captured count matches the fixture. npm run typecheck rejects an intentionally wrong assignment; restore valid code and rerun successfully before committing.",
           "trap": "Type annotations do not validate JSON received from another process."
         },
         {
@@ -319,7 +319,7 @@
           "path": "week-06/api/app.ts",
           "learn": "HTTP methods, paths, headers, status, JSON and app factories",
           "resources": ["http", "fastify", "ftest"],
-          "instructions": "Copy the immutable fixtures/api-starter once into your week-06/api folder as described in docs/12-application-wiring.md. Continue its exported createApp factory and separate server.ts listener. Add an in-memory GET /api/events returning a few synthetic records, send a request with curl.exe and add an app.inject test in app.test.ts. Run the app with npm.cmd run dev:student -- RB1, replacing RB1. Bind to loopback and retain this entry point in later weeks.",
+          "instructions": "Copy the immutable fixtures/api-starter once into your week-06/api folder as described in docs/12-application-wiring.md. Continue its exported createApp factory and separate server.ts listener. Add an in-memory GET /api/events returning a few synthetic records, send a request with curl.exe and add an app.inject test in app.test.ts. Run the app with npm run dev:student -- RB1, replacing RB1. Bind to loopback and retain this entry point in later weeks.",
           "proof": "An annotated exchange names method, URL, response status and JSON. The test runs without opening a network port.",
           "trap": "The in-memory lab is local and temporary. It has no authentication yet and must not be publicly exposed."
         },
@@ -441,7 +441,7 @@
           "path": "week-08/database/migrations/001-events.sql",
           "learn": "DDL, constraints, timestamps and forward migrations",
           "resources": ["pg", "constraints"],
-          "instructions": "Create merchants and payment_events from the agreed field contract, including a foreign key, amount check and timestamp columns. Use the supplied runner via npm.cmd run migrate:practice -- students/RB1/week-08/database/migrations, replacing RB1. Read fixtures/migration-runner.ts and its support tests, then explain ordered version tracking, one-client transactions and repeat-run behavior. Write schema-relative SQL without transaction commands; do not invent runner plumbing in this task.",
+          "instructions": "Create merchants and payment_events from the agreed field contract, including a foreign key, amount check and timestamp columns. Use the supplied runner via npm run migrate:practice -- students/RB1/week-08/database/migrations, replacing RB1. Read fixtures/migration-runner.ts and its support tests, then explain ordered version tracking, one-client transactions and repeat-run behavior. Write schema-relative SQL without transaction commands; do not invent runner plumbing in this task.",
           "proof": "An empty test database migrates; invalid amount/merchant writes fail; a second runner invocation preserves rows.",
           "trap": "Do not edit a migration after the shared cohort has applied it. Add a new migration."
         },
@@ -1031,7 +1031,7 @@
       "title": "Make failures visible and requests bounded",
       "phase": "Deliver",
       "need": "A slow database, bad request or expired session should produce a useful failure rather than a misleading demo.",
-      "before": "Reuse the existing suite and GitHub workflow. Do not introduce AWS, Docker, Redis or a monitoring vendor. Native Windows remains the primary run path.",
+      "before": "Reuse the existing suite and GitHub workflow. Do not introduce AWS, Docker, Redis or a monitoring vendor. Mac and Windows both remain supported run paths.",
       "outcome": "Bounded endpoints, redacted diagnostic logs and deliberate client errors.",
       "shared": "shared/api/src/app.ts, shared/api/test/, shared/web/src/App.tsx and .github/workflows/checks.yml",
       "tasks": [
@@ -1062,7 +1062,7 @@
           "title": "Verify the current CI gate",
           "minutes": 100,
           "path": "week-18/quality/ci-proof.md",
-          "learn": "Existing checks, real DB tests and Windows/Linux portability",
+          "learn": "Existing checks, real DB tests and Mac, Windows and Linux portability",
           "resources": ["actions"],
           "instructions": "Explain the committed starter jobs and extend the database suite discovery with your actual .db.test.ts tests. The existing PostgreSQL service runs practice-fixture checks; it is not proof of product migrations. Add a product migration test and demonstrate one deliberately failing check locally and, once published, on a real PR.",
           "proof": "The required commands run from a clean install; a deliberately broken assertion/migration makes the relevant check fail.",
@@ -1090,7 +1090,7 @@
       "number": 19,
       "title": "Build one bounded extension and prepare the portfolio",
       "phase": "Deliver",
-      "need": "Every student needs attributable implementation evidence without turning the common product into fifteen unrelated applications.",
+      "need": "Every student needs attributable implementation evidence without turning the common product into twenty unrelated applications.",
       "before": "Complete the core merchant flow and Week 18 failure checks first. Select one scope from docs/15-individual-extension.md and agree its proof before adding code. Reuse the existing API, database and React client.",
       "outcome": "One bounded tested extension, an attributable case study and a rehearsed complete demo.",
       "shared": "shared/delivery/extension-decisions.md and shared/delivery/portfolio-guide.md",
@@ -1163,7 +1163,7 @@
           "path": "week-20/delivery/runbook.md",
           "learn": "Actual architecture, migrations, seed accounts, tests and limitations",
           "resources": ["delivery"],
-          "instructions": "Consolidate the Week 15 clean-start notes and subsequent corrections into the final native-Windows runbook with clone/install, local configuration, database creation, migration/seed, API/UI start, tests, common failures and shutdown. Include a diagram matching actual code and a short next-sprint boundary. Propose the shared root README update in the shared-task PR.",
+          "instructions": "Consolidate the Week 15 clean-start notes and subsequent corrections into the final Mac and Windows runbook with clone/install, local configuration, database creation, migration/seed, API/UI start, tests, common failures and shutdown. Include a diagram matching actual code and a short next-sprint boundary. Propose the shared root README update in the shared-task PR.",
           "proof": "A stranger can find every command, secret variable and dependency; unfinished product work is named, not hidden.",
           "trap": "Do not describe Docker, queues, Rust, deployment or real payments as implemented in Sprint 1."
         },
@@ -1340,7 +1340,10 @@
       "../docs/04-api-and-security-contract.md"
     ],
     "evidence": ["Assessment and review", "../docs/10-assessment.md"],
-    "setup": ["Windows setup", "../docs/02-windows-setup.md"],
+    "setup": [
+      "Setup guide for Mac and Windows",
+      "../docs/02-setup-guide-mac-windows.md"
+    ],
     "delivery": ["Delivery documentation", "../shared/delivery/README.md"],
     "openapi": [
       "OpenAPI 3.1 specification",
@@ -1375,7 +1378,12 @@
     "RB12",
     "RB13",
     "RB14",
-    "RB15"
+    "RB15",
+    "RB16",
+    "RB17",
+    "RB18",
+    "RB19",
+    "RB20"
   ],
   "durationWeeks": 20,
   "weeklyHours": {

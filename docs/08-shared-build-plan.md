@@ -31,4 +31,4 @@ The Week 10 API specification grows with the actual implementation and is review
 
 Keep applied migrations intact and add forward migrations. Security, ownership and database changes need maintainer review. The [application wiring guide](12-application-wiring.md) explains how the individual tasks assemble one continuing app.
 
-Week 19 extensions stay in each student's continuing app by default. The shared contribution is a reviewed scope/portfolio guide; maintainers may accept a useful feature through its own reviewed PR, but the common product does not require fifteen extra features.
+Week 19 extensions stay in each student's continuing app by default. The shared contribution is a reviewed scope/portfolio guide; maintainers may accept a useful feature through its own reviewed PR, but the common product does not require twenty extra features.

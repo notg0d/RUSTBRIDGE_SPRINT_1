@@ -2,7 +2,7 @@
 
 ## Course boundary
 
-- 20 weeks, fifteen Windows learners, 60 core project tasks and 20 common problem-solving blocks.
+- 20 weeks, twenty learners on Mac or Windows, 60 core project tasks and 20 common problem-solving blocks.
 - A 15-hour planned core week, including two hours of problem-solving. Up to five additional hours support repetition or completing feedback.
 - One shared MerchantDesk application and the same individual core practice for everyone.
 - JavaScript/TypeScript, Node/Fastify, PostgreSQL/SQL and a small React + Vite interface.
@@ -41,7 +41,7 @@ React renders the interface. HTTP transports requests; Fastify and PostgreSQL en
 
 ## Extension and portfolio
 
-Week 19 adds one reviewed [bounded extension](15-individual-extension.md) in the same application, not a separate student career track or a new product. It cannot substitute for core proof or require fifteen extra shared features.
+Week 19 adds one reviewed [bounded extension](15-individual-extension.md) in the same application, not a separate student career track or a new product. It cannot substitute for core proof or require twenty extra shared features.
 
 Week 20 requires a reproducible local start, tested behavior, a demo under three minutes, architecture/setup documentation, one hard-problem case study and an oral/no-AI checkpoint. A local demo satisfies the portfolio rule; public deployment is deferred.
 

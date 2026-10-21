@@ -19,7 +19,7 @@ assert.deepEqual(data.application, {
   clientRoot: 'week-16/client',
 });
 const expectedStudents = Array.from(
-  { length: 15 },
+  { length: 20 },
   (_, index) => 'RB' + (index + 1),
 );
 assert.deepEqual(data.students, expectedStudents);
@@ -156,8 +156,7 @@ const publishedTaskIds = [
 for (const id of publishedTaskIds)
   assert.ok(ids.has(id), 'Published task ID was removed: ' + id);
 
-const official =
-  'https://github.com/StartwithDot/FULLSTACK-BACKEND-ENG-SPRINT-1';
+const official = 'https://github.com/StartwithDot/RUSTBRIDGE_SPRINT_1';
 const guide = readFileSync('docs/03-student-guide.md', 'utf8');
 const publication = readFileSync('admin/publishing.md', 'utf8');
 assert.ok(guide.includes(official + '.git'));
@@ -266,5 +265,5 @@ function visit(directory) {
 }
 visit('.');
 console.log(
-  'Verified 20 weeks, 60 core task IDs, 20 problem-solving blocks, 15 students, week/index alignment, setup timing, 15-hour core budgets, application paths, lockfile, local links and no em dashes.',
+  'Verified 20 weeks, 60 core task IDs, 20 problem-solving blocks, 20 students, week/index alignment, setup timing, 15-hour core budgets, application paths, lockfile, local links and no em dashes.',
 );

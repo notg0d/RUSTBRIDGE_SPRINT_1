@@ -1,6 +1,6 @@
 # Fastify API
 
-Run npm.cmd run dev:api from the repository root. The supplied app factory exposes only GET /health/live and binds to 127.0.0.1 in server.ts. There is no completed event API or authentication.
+Run npm run dev:api from the repository root. The supplied app factory exposes only GET /health/live and binds to 127.0.0.1 in server.ts. There is no completed event API or authentication.
 
 For individual practice, follow the [continuing app wiring](../../docs/12-application-wiring.md). Shared modules must not import students/ code.
 

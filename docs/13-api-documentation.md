@@ -6,6 +6,15 @@ OpenAPI describes an HTTP interface; it does not implement routes or prove behav
 
 From the repository root, replace RB1. Preserve an existing specification rather than overwriting it:
 
+Mac (Terminal):
+
+```bash
+mkdir -p students/RB1/week-10/api
+cp fixtures/openapi-starter.json students/RB1/week-10/api/openapi.json
+```
+
+Windows (PowerShell):
+
 ```powershell
 New-Item -ItemType Directory -Path "students/RB1/week-10/api" -Force
 Copy-Item -LiteralPath "fixtures/openapi-starter.json" -Destination "students/RB1/week-10/api/openapi.json"
@@ -27,10 +36,20 @@ In Week 20 compare every implemented operation with the actual tests and runbook
 
 ## Prove it against our server
 
+Mac (Terminal):
+
+```bash
+node -e "JSON.parse(require('fs').readFileSync('students/RB1/week-10/api/openapi.json','utf8'))"
+npm run test:student -- RB1
+npm run test:student:db -- RB1
+```
+
+Windows (PowerShell):
+
 ```powershell
 Get-Content -LiteralPath "students/RB1/week-10/api/openapi.json" -Raw | ConvertFrom-Json | Out-Null
-npm.cmd run test:student -- RB1
-npm.cmd run test:student:db -- RB1
+npm run test:student -- RB1
+npm run test:student:db -- RB1
 ```
 
 The first checks JSON syntax only, not complete OpenAPI semantic validity or server conformance. A peer must construct requests from the specification and compare real status/body/header behavior. Keep redacted exchanges and negative tests as evidence; never copy cookies/passwords into the specification.
