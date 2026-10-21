@@ -4,13 +4,26 @@ From Week 6, keep one MerchantDesk API entry point in students/YOUR_ID/week-06/a
 
 The shared application remains in shared/. Promote reviewed work only for an assigned shared task, adapting imports and preserving authorship. Continue individual practice if another shared task is delayed; do not import another student's branch or copy a finished shared solution as your answer.
 
+## Where to build, and what to copy in Week 6
+
+Build and test your API first in your own project repository (`src/app.ts` and `src/server.ts`, see the [own project repository guide](19-own-project-repo.md)). The commands below set up the cohort copy of the API, where the maintainers check your proof. When your own version works, replace the copied starter files with your working files, fix their relative imports to the cohort layout, and rerun the proof in the cohort clone.
+
 ## Copy the API shell once in Week 6
 
 Run from the repository root, replacing RB1 with your ID. Copy only if the destination does not exist; preserve earlier work otherwise.
 
+Mac (Terminal):
+
+```bash
+cp -R fixtures/api-starter students/RB1/week-06/api
+npm run dev:student -- RB1
+```
+
+Windows (PowerShell):
+
 ```powershell
 Copy-Item -LiteralPath "fixtures/api-starter" -Destination "students/RB1/week-06/api" -Recurse
-npm.cmd run dev:student -- RB1
+npm run dev:student -- RB1
 ```
 
 The shell supplies liveness only. B01.1 adds the first in-memory GET and injection test. Keep createApp in week-06/api/app.ts and the listener in week-06/api/server.ts; tests call the factory without opening a port.
@@ -61,9 +74,9 @@ dev:student replaces its child DATABASE_URL with TEST_DATABASE_URL and sets DATA
 
 In Week 8 pass the runner's URL/schema through server.ts to createRepository. Validate schema identifiers before placing them in SQL, and parameterize ordinary data values. Do not hard-code public or merchantdesk in individual queries.
 
-```powershell
-npm.cmd run migrate:practice -- students/RB1/week-08/database/migrations
-npm.cmd run dev:student -- RB1
+```bash
+npm run migrate:practice -- students/RB1/week-08/database/migrations
+npm run dev:student -- RB1
 ```
 
 The runner requires a database name ending in _test and creates lab_rb1. Seed merchants before inserting events; Week 11 extends that seed with operators. Read seed credentials from ignored configuration and do not print them.
@@ -74,10 +87,10 @@ Real DB tests create random disposable schemas, apply the same migrations and in
 
 ## Run authored tests
 
-```powershell
-npm.cmd run test:student -- RB1
-npm.cmd run test:student:db -- RB1
-npm.cmd run typecheck
+```bash
+npm run test:student -- RB1
+npm run test:student:db -- RB1
+npm run typecheck
 ```
 
 Use .test.ts for fast checks and .db.test.ts for database checks. Root suites include authored student tests already present. Empty folders do not produce invented proof. Keep special seed/setup commands in NOTES.md.
@@ -88,9 +101,18 @@ Copy the [OpenAPI shell](../fixtures/openapi-starter.json) using the [documentat
 
 ## Copy the React shell once in Week 16
 
+Mac (Terminal):
+
+```bash
+cp -R fixtures/web-starter students/RB1/week-16/client
+npm run dev --prefix students/RB1/week-16/client
+```
+
+Windows (PowerShell):
+
 ```powershell
 Copy-Item -LiteralPath "fixtures/web-starter" -Destination "students/RB1/week-16/client" -Recurse
-npm.cmd run dev --prefix students/RB1/week-16/client
+npm run dev --prefix students/RB1/week-16/client
 ```
 
 Only copy if the destination is absent. Week 16 starts with static records; Week 17 connects the protected backend. Use http://localhost:5173 and relative /api requests. The supplied proxy points at the loopback API; the same APP_ORIGIN and server-controlled cookie apply. Stop the shared UI before starting yours.

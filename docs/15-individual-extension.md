@@ -28,4 +28,4 @@ Do not add real payment processing, registration/password reset, Rust, queues, r
 
 Run the existing fast/DB/type checks and the new tests. A non-author demonstrates one success and one failure and verifies that core ownership/duplicate tests still pass. Include actual commands, results and authored commits in the case study.
 
-The extension stays in your individual continuing app by default. A useful shared addition needs a separately assigned reviewed PR; the common product does not require fifteen extra features. Explain what you implemented, inherited and reviewed rather than claiming the entire team's work.
+The extension stays in your individual continuing app by default. A useful shared addition needs a separately assigned reviewed PR; the common product does not require twenty extra features. Explain what you implemented, inherited and reviewed rather than claiming the entire team's work.

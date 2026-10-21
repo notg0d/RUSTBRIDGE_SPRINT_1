@@ -12,4 +12,4 @@ Read inputs from fixtures/events.json. Treat non-2xx responses deliberately; nev
 
 Place the reviewed consumer in send-event.ts. Add its exact run command to README during promotion. Use the same API contract as the interface.
 
-Run npm.cmd test for authored fast tests and npm.cmd run typecheck for shared simulator types. Root test discovery includes shared/simulator/test/ as well as API and student tests; database tests use the separate npm.cmd run test:db command.
+Run npm test for authored fast tests and npm run typecheck for shared simulator types. Root test discovery includes shared/simulator/test/ as well as API and student tests; database tests use the separate npm run test:db command.

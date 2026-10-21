@@ -4,12 +4,12 @@ For maintainers and write collaborators. Students follow the [student guide](../
 
 ## Official repository
 
-The cohort repository is [StartwithDot/FULLSTACK-BACKEND-ENG-SPRINT-1](https://github.com/StartwithDot/FULLSTACK-BACKEND-ENG-SPRINT-1).
+The cohort repository is [StartwithDot/RUSTBRIDGE_SPRINT_1](https://github.com/StartwithDot/RUSTBRIDGE_SPRINT_1).
 
-```powershell
-git clone https://github.com/StartwithDot/FULLSTACK-BACKEND-ENG-SPRINT-1.git
-Set-Location -LiteralPath "FULLSTACK-BACKEND-ENG-SPRINT-1"
-npm.cmd ci
+```bash
+git clone https://github.com/StartwithDot/RUSTBRIDGE_SPRINT_1.git
+cd RUSTBRIDGE_SPRINT_1
+npm ci
 ```
 
 For an existing collaborator checkout, inspect git status and git remote -v. origin must point to the official URL above. Correct a wrong remote deliberately; do not run git init again. The local folder name does not determine the push destination.
@@ -18,7 +18,7 @@ For an existing collaborator checkout, inspect git status and git remote -v. ori
 
 Start from a clean main, preserving unfinished work before switching branches:
 
-```powershell
+```bash
 git switch main
 git fetch origin
 git merge --ff-only origin/main
@@ -27,15 +27,15 @@ git switch -c docs/clarify-week-instructions
 
 Use a meaningful branch name for the actual change. Run the relevant checks, stage only intended files and inspect the diff. For a documentation change:
 
-```powershell
-npm.cmd run check
+```bash
+npm run check
 git add -- README.md docs/
 git diff --cached
 git commit -m "Clarify weekly instructions"
 git push -u origin docs/clarify-week-instructions
 ```
 
-Run npm.cmd run test:db for database-related changes. Open a PR to the official main, inspect the Actions results and merge under repository rules. A branch push alone does not update main. A permitted, reviewed git push origin main also updates main; never bypass protection or force-push if rejected.
+Run npm run test:db for database-related changes. Open a PR to the official main, inspect the Actions results and merge under repository rules. A branch push alone does not update main. Publish only through a pull request. A maintainer merges after review and passing checks. Never push directly to main, bypass protection or force-push.
 
 ## Verify
 

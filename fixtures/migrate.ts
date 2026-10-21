@@ -12,7 +12,7 @@ let schema = 'merchantdesk';
 if (mode === 'practice') {
   const normalized = directory?.replaceAll('\\', '/');
   const match = normalized?.match(
-    /^students\/(RB(?:[1-9]|1[0-5]))\/week-08\/database\/migrations\/?$/,
+    /^students\/(RB(?:[1-9]|1[0-9]|20))\/week-08\/database\/migrations\/?$/,
   );
   if (!match)
     throw new Error('Supply students/YOUR_RB_ID/week-08/database/migrations.');

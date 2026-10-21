@@ -1,6 +1,6 @@
 # Small React interface
 
-Run npm.cmd run dev:web from the repository root and open http://localhost:5173. The supplied screen is a shell only.
+Run npm run dev:web from the repository root and open http://localhost:5173. The supplied screen is a shell only.
 
 Week 16 adds typed list/filter state. Week 17 adds relative /api calls, a controlled login form and logout. Week 18 covers failed/empty/loading states and review. No router, state-management package, Next.js or design system is required.
 

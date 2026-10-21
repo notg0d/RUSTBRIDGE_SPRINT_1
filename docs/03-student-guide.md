@@ -1,19 +1,19 @@
 # Student guide
 
-All fifteen students complete the same curriculum. Your weekly problem statement points to the canonical instructions in `weeks/`; write answers and code in your own folder.
+All twenty students complete the same curriculum. Your weekly problem statement points to the canonical instructions in `weeks/`; write answers and code in your own folder.
 
-Use your assigned roll number from RB1 through RB15 in folder paths and student commands. IDs have no leading zero; for example, use RB1, not RB01. Branch examples use the lowercase equivalent, such as rb1-week-01.
+Use your assigned roll number from RB1 through RB20 in folder paths and student commands. IDs have no leading zero; for example, use RB1, not RB01. Branch examples use the lowercase equivalent, such as rb1-week-01.
 
 ## Set up GitHub
 
-Accept the collaborator invitation to [StartwithDot/FULLSTACK-BACKEND-ENG-SPRINT-1](https://github.com/StartwithDot/FULLSTACK-BACKEND-ENG-SPRINT-1). The repository owner/admin must arrange Write access before you can push a task branch. Clone the official repository:
+Accept the collaborator invitation to [StartwithDot/RUSTBRIDGE_SPRINT_1](https://github.com/StartwithDot/RUSTBRIDGE_SPRINT_1). The repository owner/admin must arrange Write access before you can push a task branch. Clone the official repository:
 
-```powershell
-git clone https://github.com/StartwithDot/FULLSTACK-BACKEND-ENG-SPRINT-1.git
-Set-Location -LiteralPath "FULLSTACK-BACKEND-ENG-SPRINT-1"
+```bash
+git clone https://github.com/StartwithDot/RUSTBRIDGE_SPRINT_1.git
+cd RUSTBRIDGE_SPRINT_1
 git config user.name "Your Name"
 git config user.email "YOUR_VERIFIED_OR_GITHUB_NOREPLY_EMAIL"
-npm.cmd ci
+npm ci
 ```
 
 `origin` is the official cohort repository. Push only your named task branches and open PRs into its main branch. Do not push directly to main or merge your own PR; a maintainer handles merging after review and checks. These are cohort rules; the owner/admin configures the GitHub access and branch protections.
@@ -22,9 +22,11 @@ If you already have a clone or unfinished work, inspect `git status` and `git re
 
 ## Weekly workflow
 
+Build each code piece first in your [own project repository](19-own-project-repo.md). Then copy it into your cohort folder and follow the steps below. The [VS Code workflow](18-vscode-workflow.md) shows both repositories side by side. The [repository map](17-repo-map.md) explains the folders.
+
 Start with a clean main branch. Replace the student ID and week below with your assignment:
 
-```powershell
+```bash
 git switch main
 git fetch origin
 git merge --ff-only origin/main
@@ -35,7 +37,7 @@ Task IDs are stable labels, not week numbers: `T02.1` is assigned in Week 4. Fol
 
 Read the current week completely. Complete one task, run its proof and make a focused commit with the task ID first:
 
-```powershell
+```bash
 git add students/RB1/week-01/typescript/inspector.ts
 git diff --cached
 git commit -m "T01.1 inspect a sandbox event"
@@ -52,31 +54,40 @@ If main is dirty or `--ff-only` fails, inspect the unfinished work or divergence
 
 Run commands from the repository root, using your actual RB number and file paths:
 
-```powershell
-npm.cmd run practice -- students/RB1/week-01/typescript/inspector.ts
-npm.cmd run test:practice -- students/RB1/week-05/typescript/validate-event.test.ts
-npm.cmd run typecheck
+```bash
+npm run practice -- students/RB1/week-01/typescript/inspector.ts
+npm run test:practice -- students/RB1/week-05/typescript/validate-event.test.ts
+npm run typecheck
 ```
 
 `practice` and `test:practice` use tsx to execute TypeScript; they do not check types. Run `typecheck` separately. For the Week 4 intentional type error, capture the expected compiler failure, then restore valid code and rerun the check before committing.
 
 From Week 6, follow the [application wiring guide](12-application-wiring.md). Copy the API starter once, keep `week-06/api/app.ts` as the factory and `server.ts` as the listener, and connect later modules to that app.
 
-```powershell
-npm.cmd run dev:student -- RB1
-npm.cmd run test:student -- RB1
-npm.cmd run test:student:db -- RB1
+```bash
+npm run dev:student -- RB1
+npm run test:student -- RB1
+npm run test:student:db -- RB1
 ```
 
-Database tests require the dedicated `_test` database. Tests use separate disposable schemas; individual apps use their own lab schema. Root dependencies support all labs, so do not install another dependency set every week. `npm.cmd test` includes shared/tooling tests and all authored student fast tests present; `npm.cmd run check` verifies the full repository without requiring a database. `npm.cmd run test:db` includes shared and authored student database tests. Targeted commands above help isolate your own failure.
+Database tests require the dedicated `_test` database. Tests use separate disposable schemas; individual apps use their own lab schema. Root dependencies support all labs, so do not install another dependency set every week. `npm test` includes shared/tooling tests and all authored student fast tests present; `npm run check` verifies the full repository without requiring a database. `npm run test:db` includes shared and authored student database tests. Targeted commands above help isolate your own failure.
 
 ## Add the React client in Week 16
 
 Copy only if the destination does not already exist:
 
+Mac (Terminal):
+
+```bash
+cp -R fixtures/web-starter students/RB1/week-16/client
+npm run dev --prefix students/RB1/week-16/client
+```
+
+Windows (PowerShell):
+
 ```powershell
 Copy-Item -LiteralPath "fixtures/web-starter" -Destination "students/RB1/week-16/client" -Recurse
-npm.cmd run dev --prefix students/RB1/week-16/client
+npm run dev --prefix students/RB1/week-16/client
 ```
 
 Keep editing this client in later weeks. Stop the shared UI/API before running your own: they use the same ports, 5173 and 3000. The client uses relative `/api` requests through the supplied proxy.

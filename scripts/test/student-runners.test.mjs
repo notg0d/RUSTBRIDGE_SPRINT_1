@@ -23,14 +23,14 @@ function run(script, args, env = process.env) {
 }
 
 test('student commands reject invalid or escaping IDs before running code', () => {
-  for (const id of ['RB0', 'RB01', 'RB16', 'RB99', '../RB1']) {
+  for (const id of ['RB0', 'RB01', 'RB21', 'RB99', '../RB1']) {
     for (const [script, args] of [
       ['scripts/run-student-api.mjs', [id]],
       ['scripts/run-tests.mjs', ['--student', id]],
     ]) {
       const result = run(script, args);
       assert.equal(result.status, 1);
-      assert.match(result.stderr, /RB1 through RB15/);
+      assert.match(result.stderr, /RB1 through RB20/);
     }
   }
 });
@@ -89,7 +89,7 @@ test('test launcher rejects missing IDs, unknown options and duplicate flags', (
   ]) {
     const result = run('scripts/run-tests.mjs', args);
     assert.equal(result.status, 1);
-    assert.match(result.stderr, /Usage:|RB1 through RB15/);
+    assert.match(result.stderr, /Usage:|RB1 through RB20/);
   }
 });
 
@@ -278,5 +278,5 @@ test('student API paths use the Week 6 continuing factory and reject escaping ID
     studentApiRelativePath('RB10'),
     'students/RB10/week-06/api/server.ts',
   );
-  assert.throws(() => studentApiRelativePath('../RB1'), /RB1 through RB15/);
+  assert.throws(() => studentApiRelativePath('../RB1'), /RB1 through RB20/);
 });

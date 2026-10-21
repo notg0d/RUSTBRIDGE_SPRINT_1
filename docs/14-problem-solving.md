@@ -20,10 +20,10 @@ In Week 1 a runnable function plus an expected/actual table is sufficient; autom
 
 Use students/YOUR_ID/week-NN/problem-solving/README.md for the problem, assumptions, run/test commands, one corrected attempt and explanation. Keep solution.ts and solution.test.ts beside it when applicable. These are student-authored files, not supplied answers.
 
-```powershell
-npm.cmd run practice -- students/RB1/week-03/problem-solving/solution.ts
-npm.cmd run test:practice -- students/RB1/week-03/problem-solving/solution.test.ts
-npm.cmd run typecheck
+```bash
+npm run practice -- students/RB1/week-03/problem-solving/solution.ts
+npm run test:practice -- students/RB1/week-03/problem-solving/solution.test.ts
+npm run typecheck
 ```
 
 Replace ID/week and run tests only after authoring the file. Root student test discovery includes these tests. A passing execution without assertions is not a correctness proof.

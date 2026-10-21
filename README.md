@@ -2,7 +2,7 @@
 
 **MerchantDesk: TypeScript and Web2 Application Foundations**
 
-20 weeks | 15 students | 15-20 hours weekly | Windows | free local tooling
+20 weeks | 20 students | 15-20 hours weekly | Mac and Windows | free local tooling
 
 Build MerchantDesk, a merchant-side application for receiving and inspecting synthetic payment notifications. An operator signs in, submits sample events and views only their merchant's history. The backend validates input, persists records, handles duplicates and protects ownership. A small React + Vite interface makes the API usable.
 
@@ -11,7 +11,7 @@ Students build our APIs with TypeScript, Node.js, Fastify and PostgreSQL, then c
 ## Start here
 
 1. Read [Start Here](docs/00-START-HERE.md) and the [project brief](docs/01-project-brief.md).
-2. Complete the Week 1 sections of [Windows setup](docs/02-windows-setup.md).
+2. Complete the Week 1 steps (Step 1 to Step 3) of the [setup guide for Mac and Windows](docs/02-setup-guide-mac-windows.md).
 3. Read the [student guide](docs/03-student-guide.md) and find your folder in [students/](students/README.md).
 4. Open the current week's problem statement and complete the linked core tasks and problem-solving block.
 
@@ -52,7 +52,7 @@ Plan for a 15-hour core week, including two hours of problem-solving, guided lea
 | --------- | -------------------------------------------------------------------------------- |
 | docs/     | Product contract, setup, API documentation, problem-solving and extension guides |
 | weeks/    | The 20 canonical weekly task files                                               |
-| students/ | Individual workspaces for RB1 through RB15                                       |
+| students/ | Individual workspaces for RB1 through RB20                                       |
 | shared/   | One reviewed API, interface, database and simulator                              |
 | fixtures/ | Synthetic inputs and copyable teaching scaffolds                                 |
 | scripts/  | Setup, test and consistency tooling                                              |
@@ -73,16 +73,16 @@ Plan for a 15-hour core week, including two hours of problem-solving, guided lea
 
 From the repository root, run each command separately:
 
-```powershell
-npm.cmd ci
-npm.cmd run check
-npm.cmd run dev:api
+```bash
+npm ci
+npm run check
+npm run dev:api
 ```
 
 In a second terminal in the same folder, run:
 
-```powershell
-npm.cmd run dev:web
+```bash
+npm run dev:web
 ```
 
 Open http://localhost:5173. These commands check the supplied starting code and run its shells, not a finished application. The API initially exposes liveness only. Students implement the merchant features through the tasks. PostgreSQL setup begins in Week 4; the continuing individual API starts in Week 6 and React work in Week 16.
@@ -92,3 +92,5 @@ Open http://localhost:5173. These commands check the supplied starting code and 
 A non-author follows the runbook from a clean checkout and fresh course database, migrates/seeds, signs in, submits events, demonstrates invalid/duplicate/conflict cases, inspects only owned records and runs tests. Each student also supplies a bounded tested extension, a case study, a demo under three minutes, attributable commits and an oral/no-AI checkpoint.
 
 A local demo is sufficient. Public hosting, real payments, Rust and blockchain are not Sprint 1 completion claims.
+
+New here? Read [Start here](docs/00-START-HERE.md), then the [repository map](docs/17-repo-map.md).

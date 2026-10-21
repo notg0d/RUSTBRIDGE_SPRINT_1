@@ -3,7 +3,7 @@ import pg from 'pg';
 const connectionString = process.env.PRACTICE_DATABASE_URL;
 if (!connectionString || connectionString.includes('REPLACE_LOCALLY')) {
   console.error(
-    'Configure PRACTICE_DATABASE_URL in ignored .env. See docs/02-windows-setup.md.',
+    'Configure PRACTICE_DATABASE_URL in ignored .env. See docs/02-setup-guide-mac-windows.md.',
   );
   process.exit(1);
 }

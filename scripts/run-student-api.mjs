@@ -10,7 +10,7 @@ import {
 try {
   const student = parseStudentId(process.argv[2]);
   if (process.argv.length !== 3)
-    throw new Error('Usage: npm.cmd run dev:student -- RB1');
+    throw new Error('Usage: npm run dev:student -- RB1');
   const file = path.resolve(studentApiRelativePath(student));
   if (!existsSync(file))
     throw new Error(
