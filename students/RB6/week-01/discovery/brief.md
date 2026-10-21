@@ -32,9 +32,9 @@ graph LR
     Simulator["Simulator"]
 
 User-- Login -->ReactInterface
-ReactInterface-- Access their DB with ID -->PostgreSQL
+ReactInterface-- Request for the access of DB  -->MerchantAPI
 MerchantAPI-- Validate and add payment to DB -->PostgreSQL
 Simulator--sends payment notify -->MerchantAPI
-PostgreSQL-- Return Payments -->ReactInterface
-PostgreSQL-- Merchant ID -->Simulator
+PostgreSQL-- Return Payments Records  -->MerchantAPI
+MerchantAPI -- Return payment records from DB -->ReactInterface
 ```
