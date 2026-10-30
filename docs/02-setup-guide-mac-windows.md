@@ -758,18 +758,18 @@ Nothing in this guide needs to be committed. Never commit `.env`.
 
 Use this checklist to record your progress:
 
-- [ ] Git is installed: `git --version` prints a version.
-- [ ] Git name and email are set: `git config user.name` and `git config user.email` show my details.
-- [ ] VS Code is installed: its About window shows a version.
-- [ ] Prettier - Code formatter is installed, and format-on-save is enabled.
-- [ ] Node is installed: `node --version` shows Node 22.17.0 or newer within 22.x.
-- [ ] npm is installed: `npm --version` prints a version.
-- [ ] I accepted the cohort invitation and cloned the official repository.
-- [ ] I can find the repository root and my RB number.
-- [ ] `npm ci` finished successfully.
-- [ ] `npm run setup:check` passes.
-- [ ] `npm run check` passes.
-- [ ] Both development servers start, and their browser checks work.
+- [x] Git is installed: `git --version` prints a version.
+- [x] Git name and email are set: `git config user.name` and `git config user.email` show my details.
+- [x] VS Code is installed: its About window shows a version.
+- [x] Prettier - Code formatter is installed, and format-on-save is enabled.
+- [x] Node is installed: `node --version` shows Node 22.17.0 or newer within 22.x.
+- [x] npm is installed: `npm --version` prints a version.
+- [x] I accepted the cohort invitation and cloned the official repository.
+- [x] I can find the repository root and my RB number.
+- [x] `npm ci` finished successfully.
+- [x] `npm run setup:check` passes.
+- [x] `npm run check` passes.
+- [x] Both development servers start, and their browser checks work.
 - [ ] **Week 4:** PostgreSQL is installed: `psql --version` shows 17.x.
 - [ ] **Week 4:** The course role and three dedicated databases exist.
 - [ ] **Week 4:** The practice fixture query returns 6 events.
